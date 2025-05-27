@@ -28,7 +28,6 @@ This project is open-source and available under the MIT License.
 
 ---
 
-Let me know if you want it personalized with your GitHub/LinkedIn links, a live demo badge, or if you're deploying to **Vercel** (I can add deploy steps too).
 
 
 ## 🛠️ Tech Stack
