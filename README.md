@@ -13,9 +13,23 @@ A responsive and animated developer portfolio website built using **Next.js** an
 - 📱 Fully responsive and mobile-friendly
 - 🎉 Clean, modern UI with animations
 
-## 📸 Screenshots
+## 🧑‍🎓 Author
 
-_Add screenshots or a demo GIF here if available._
+**Kutubuddin Ansari**
+
+Portfolio: coming soon 
+
+GitHub: @kutubofficial
+
+LinkedIn: @kutubuofficial
+
+📄 License
+This project is open-source and available under the MIT License.
+
+---
+
+Let me know if you want it personalized with your GitHub/LinkedIn links, a live demo badge, or if you're deploying to **Vercel** (I can add deploy steps too).
+
 
 ## 🛠️ Tech Stack
 
@@ -56,26 +70,9 @@ _Add screenshots or a demo GIF here if available._
 git clone https://github.com/kutubofficial/my-workfolio.git
 cd my-workfolio
 
-**Install dependencies**
+Install dependencies
 npm install
 
-**Run the app**
+Run the app
 npm run dev
 
-
-**🧑‍🎓 Author**
-
-Kutubuddin Ansari
-
-Portfolio: coming soon / [add your link]
-
-GitHub: @kutubofficial
-
-LinkedIn: @kutubuofficial
-
-**📄 License**
-This project is open-source and available under the MIT License.
-
----
-
-Let me know if you want it personalized with your GitHub/LinkedIn links, a live demo badge, or if you're deploying to **Vercel** (I can add deploy steps too).
