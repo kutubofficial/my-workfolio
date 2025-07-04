@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { Box, Button, Input, Text, Textarea, useToast } from "@chakra-ui/react";
 import { Tilt } from "react-tilt";
-import emailjs from "@emailjs/browser";
 import {
   BoltIcon,
   BranchIcon,
@@ -19,10 +18,6 @@ const Contact = ({ lightMode }) => {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const toast = useToast();
-
-  const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-  const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-  const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
   const defaultOptions = {
     reverse: false,
@@ -49,7 +44,8 @@ const Contact = ({ lightMode }) => {
       return;
     }
 
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail)) {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(mail)) {
       toast({
         title: "Please enter a valid email address",
         status: "error",
@@ -62,35 +58,33 @@ const Contact = ({ lightMode }) => {
     setLoading(true);
 
     try {
-      await emailjs.send(
-        SERVICE_ID,
-        TEMPLATE_ID,
-        {
-          to_name: "Kutubuddin Ansari",
-          from_name: name,
-          email: mail,
-          message: message,
-          reply_to: mail,
-        },
-        PUBLIC_KEY
-      );
-
-      toast({
-        title: "Message sent successfully!",
-        description: "I'll get back to you soon.",
-        status: "success",
-        duration: 5000,
-        isClosable: true,
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email: mail, message }),
       });
 
-      setName("");
-      setMail("");
-      setMessage("");
+      const data = await response.json();
+
+      if (response.ok) {
+        toast({
+          title: "Message sent successfully!",
+          description: "I'll get back to you soon.",
+          status: "success",
+          duration: 5000,
+          isClosable: true,
+        });
+        setName("");
+        setMail("");
+        setMessage("");
+      } else {
+        throw new Error(data.message || "Failed to send message.");
+      }
     } catch (error) {
-      console.error("Failed to send message:", error);
+      console.error("Send error:", error);
       toast({
         title: "Failed to send message",
-        description: "Please try again later",
+        description: error.message,
         status: "error",
         duration: 5000,
         isClosable: true,
@@ -113,9 +107,7 @@ const Contact = ({ lightMode }) => {
     >
       <Tilt options={defaultOptions}>
         <Box
-          bgGradient={
-            "linear-gradient(90deg, rgba(85,128,233,0.2) 20%, rgba(85,128,233,0.4) 45%, rgba(85,128,233,0.2) 100%);"
-          }
+          bgGradient="linear-gradient(90deg, rgba(85,128,233,0.2) 20%, rgba(85,128,233,0.4) 45%, rgba(85,128,233,0.2) 100%)"
           pt={"1rem"}
           pb={"2rem"}
           borderRadius={"1rem"}
@@ -159,8 +151,6 @@ const Contact = ({ lightMode }) => {
               value={name}
               onChange={(e) => setName(e.target.value)}
               bgColor={lightMode ? "#EDF1F7" : "#333"}
-              _focusVisible={{ borderColor: lightMode ? "#e1e1e1" : "#333" }}
-              borderColor={lightMode ? "#f1f1f1" : "#2c2c2c"}
               color={lightMode ? "#333" : "#d1d1d1"}
             />
             <Input
@@ -169,8 +159,6 @@ const Contact = ({ lightMode }) => {
               value={mail}
               onChange={(e) => setMail(e.target.value)}
               bgColor={lightMode ? "#EDF1F7" : "#333"}
-              _focusVisible={{ borderColor: lightMode ? "#e1e1e1" : "#333" }}
-              borderColor={lightMode ? "#f1f1f1" : "#2c2c2c"}
               color={lightMode ? "#333" : "#d1d1d1"}
             />
             <Textarea
@@ -180,8 +168,6 @@ const Contact = ({ lightMode }) => {
               rows={5}
               resize={"none"}
               bgColor={lightMode ? "#EDF1F7" : "#333"}
-              _focusVisible={{ borderColor: lightMode ? "#e1e1e1" : "#333" }}
-              borderColor={lightMode ? "#f1f1f1" : "#2c2c2c"}
               color={lightMode ? "#333" : "#d1d1d1"}
             />
 
@@ -192,12 +178,7 @@ const Contact = ({ lightMode }) => {
               isLoading={loading}
               bgColor={"rgba(85,128,233, 0.6)"}
               color={"#f5f5f5"}
-              variant={"solid"}
-              border={"2px solid rgba(85,128,233, 0.2)"}
-              boxShadow={"0px 0px 8px rgba(85,128,233, 0.5)"}
-              _hover={{
-                bgColor: "rgba(85,128,233, 0.8)",
-              }}
+              _hover={{ bgColor: "rgba(85,128,233, 0.8)" }}
             >
               Send Message
             </Button>

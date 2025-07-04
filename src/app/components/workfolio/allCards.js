@@ -42,7 +42,7 @@ const data = [
       "Real-Time Crypto Dashboard built with React, Tailwind CSS, and Redux Toolkit.",
     image: "/images/price.png",
     link: "https://github.com/kutubofficial/Real-time-crypto-tracker",
-    view: "https://real-time-crypto599.netlify.app/",
+    view: "https://market-tracker599.netlify.app/",
   },
   {
     key: 6,

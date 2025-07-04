@@ -29,7 +29,6 @@ const Card = ({ tag, title, description, image, link, view, lightMode }) => {
         boxShadow={"0 0 3px #e8e8e8"}
         overflow={"hidden"}
       >
-        {/* overflow */}
         <Box
           _groupHover={{
             bottom: "0%",
@@ -92,7 +91,6 @@ const Card = ({ tag, title, description, image, link, view, lightMode }) => {
           </Box>
           <Text></Text>
         </Box>
-        {/* overflow */}
         <Box position={"absolute"}>
           <Text
             bgColor={lightMode ? "#fff" : "#2c2c2c"}
