@@ -46,23 +46,24 @@ const TabsComponent = ({ lightMode }) => {
               gridTemplateColumns={{
                 base: "1fr",
                 md: "repeat(2, 1fr)",
-                lg: "repeat(4, 1fr)",
+                lg: "repeat(3, 1fr)",
               }}
               gap="2rem"
               w="100%"
               px="1rem"
+              // px={{ base: "1rem", md: "2rem", lg: "3rem" }}
             >
               {data?.map((card) => {
                 return (
                   <Card
                     lightMode={lightMode}
                     key={card?.key}
-                    // tag={card.tag}
                     title={card?.title}
                     description={card?.description}
                     image={card?.image}
                     link={card?.link}
                     view={card?.view}
+                    techStack={card?.techStack}
                   />
                 );
               })}

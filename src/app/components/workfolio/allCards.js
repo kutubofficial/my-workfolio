@@ -7,6 +7,7 @@ const data = [
     image: "/images/restaurant.jpg",
     link: "https://github.com/kutubofficial/Restaurant-Management-System",
     view: "https://restaurant-management-system-ashy.vercel.app/",
+    techStack: ["React", "TailwindCSS", "React-icons"],
   },
   {
     key: 2,
@@ -16,6 +17,7 @@ const data = [
     image: "/images/task.png",
     link: "https://github.com/kutubofficial/Task-Management-System",
     view: "https://task-management-system-nine-rosy.vercel.app",
+    techStack: ["React", "Node.js", "Express", "MongoDB Atlas"],
   },
   {
     key: 3,
@@ -25,6 +27,7 @@ const data = [
     image: "/images/atlas.png",
     link: "https://github.com/kutubofficial/World-Atlas",
     view: "https://world-atlas599.netlify.app/",
+    techStack: ["React", "TailwindCSS", "REST API"],
   },
   {
     key: 4,
@@ -34,6 +37,7 @@ const data = [
     image: "/images/reduxApp.png",
     link: "https://github.com/kutubofficial/redux-ecommerce-app",
     view: "https://redux-ecommerce-app599.vercel.app/",
+    techStack: ["React", "Redux", "Chakra UI"],
   },
   {
     key: 5,
@@ -43,6 +47,7 @@ const data = [
     image: "/images/price.png",
     link: "https://github.com/kutubofficial/Real-time-crypto-tracker",
     view: "https://market-tracker599.netlify.app/",
+    techStack: ["React", "TailwindCSS", "Redux Toolkit", "API"],
   },
   {
     key: 6,
@@ -52,6 +57,7 @@ const data = [
     image: "/images/login.png",
     link: "https://github.com/kutubofficial/Login-Signup-App",
     view: "https://login-auth599.netlify.app/",
+    techStack: ["React", "Node.js", "JWT", "MongoDB"],
   },
   {
     key: 7,
@@ -61,6 +67,7 @@ const data = [
     image: "/images/slot.jpg",
     link: "https://github.com/kutubofficial/slot-booking",
     view: "https://slot-booking599.netlify.app/",
+    techStack: ["React", "JSON Server", "Chakra UI", "TailwindCSS"],
   },
   {
     key: 8,
@@ -70,51 +77,47 @@ const data = [
     image: "/images/landing.jpeg",
     link: "https://github.com/kutubofficial/Landing-page",
     view: "https://landing-page599.vercel.app/",
+    techStack: ["React", "TailwindCSS", "react-toastify"],
   },
   {
     key: 9,
-    title: "Restaurant Management System",
-    description:
-      "A restaurant management system for handling orders and customers.",
-    image: "/images/restaurant.jpg",
-    link: "https://github.com/kutubofficial/Restaurant-Management-System",
-    view: "https://restaurant-management-system-ashy.vercel.app/",
-  },
-  {
-    key: 10,
     title: "User Hive",
     description:
       "A user authentication app with signup and login functionality.",
     image: "/images/hive.png",
     link: "https://github.com/kutubofficial/user-hive",
     view: "https://user-hive599.netlify.app/",
+    techStack: ["React", "Node.js", "MongoDB", "JWT"],
   },
   {
-    key: 11,
+    key: 10,
     title: "Qshop Shopping App",
     description:
       "A basic shopping app where users can add items to their cart.",
     image: "/images/cart.png",
     link: "https://github.com/kutubofficial/QShop-Shopping-App",
     view: "https://qshop599.netlify.app/",
+    techStack: ["HTML", "CSS", "JavaScript"],
   },
   {
-    key: 12,
-    title: "Todo App",
-    description:
-      "A simple todo list app built with React.js and styled with CSS.",
-    image: "/images/todo.PNG",
-    link: "https://github.com/kutubofficial/Todo-App",
-    view: "https://todo-app599.netlify.app/",
-  },
-  {
-    key: 13,
+    key: 11,
     title: "Age Calculator",
     description:
       "A simple web application that allows users to calculate their exact age in years, months, and days by entering their date of birth.",
     image: "/images/calculator.png",
     link: "https://github.com/kutubofficial/age-calculator",
     view: "https://age-calculator599.netlify.app/",
+    techStack: ["HTML", "CSS", "JavaScript"],
+  },
+  {
+    key: 12,
+    title: "BlogApp",
+    description:
+      "A full-stack blog application built with MERN. It allows users to CRUD blogs, with secure authentication and user profile management.",
+    image: "/images/blog.png",
+    link: "https://github.com/kutubofficial/BlogApp",
+    view: "https://github.com/kutubofficial/BlogApp",
+    techStack: ["React", "Node.js", "MongoDB", "Express", "JWT"],
   },
 ];
 

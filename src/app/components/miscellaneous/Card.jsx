@@ -1,11 +1,22 @@
 import { Box, Button, Image, Link, Text } from "@chakra-ui/react";
 import React from "react";
 
-const Card = ({ tag, title, description, image, link, view, lightMode }) => {
+const Card = ({
+  tag,
+  title,
+  description,
+  image,
+  link,
+  view,
+  techStack,
+  lightMode,
+}) => {
   return (
     <Box
-      w={"19rem"}
-      h={"22rem"}
+      // w={"19rem"}
+      w={{ base: "100%", sm: "22rem", md: "22rem", lg: "24rem" }}
+      // h={"22rem"}
+      h={"26rem"}
       textAlign={"left"}
       bgColor={lightMode ? "#fff" : "#2c2c2c"}
       p={"0.8rem"}
@@ -120,9 +131,28 @@ const Card = ({ tag, title, description, image, link, view, lightMode }) => {
         w={"100%"}
         textAlign={"justify"}
         fontSize={"0.9rem"}
-        color={lightMode ? "#777": "#c1c1c1"}
+        color={lightMode ? "#777" : "#c1c1c1"}
       >
         <Text>{description}</Text>
+      </Box>
+      <Box
+        mt={"0.6rem"}
+        display={"flex"}
+        flexWrap={"wrap"}
+        gap={"0.5rem"}
+        fontSize={"0.75rem"}
+        color={lightMode ? "#444" : "#ccc"}
+      >
+        {techStack?.map((tech, index) => (
+          <Text
+            key={index}
+            bgColor={lightMode ? "#e8e8e8" : "#444"}
+            p={"0.2rem 0.5rem"}
+            borderRadius={"0.3rem"}
+          >
+            {tech}
+          </Text>
+        ))}
       </Box>
     </Box>
   );
