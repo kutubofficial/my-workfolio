@@ -87,7 +87,7 @@ const data = [
     image: "/images/hive.png",
     link: "https://github.com/kutubofficial/user-hive",
     view: "https://user-hive599.netlify.app/",
-    techStack: ["React", "Node.js", "MongoDB", "JWT"],
+    techStack: ["React", "Node.js", "MongoDB", "Express"],
   },
   {
     key: 10,
@@ -114,7 +114,7 @@ const data = [
     title: "BlogApp",
     description:
       "A full-stack blog application built with MERN. It allows users to CRUD blogs, with secure authentication and user profile management.",
-    image: "/images/blog.png",
+    image: "/images/blog.jpg",
     link: "https://github.com/kutubofficial/BlogApp",
     view: "https://github.com/kutubofficial/BlogApp",
     techStack: ["React", "Node.js", "MongoDB", "Express", "JWT"],
